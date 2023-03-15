@@ -11,19 +11,15 @@ public class BankAccount {
         return amount;
     }
 
-
-    public void deposit(double som) {
-        this.amount += som;
+    public void deposit(double sum) {
+        amount += sum;
     }
 
-    public void  withDraw (int som) throws LimitException{
-        if (som > amount){
-            throw new LimitException("Сумма вывода превышает баланс счета: " + amount );
-
-        }amount -= som;
-
-
+    public void withdraw(int sum) throws LimitException {
+        if (sum > amount) {
+            throw new LimitException("Сумма вывода превышает баланс счета : ", amount);
+        }
+        amount -= sum;
     }
-
 
 }
